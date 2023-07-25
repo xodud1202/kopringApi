@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct
 @SpringBootApplication
 class KotlinApiApplication {
 	@Value("\${my-app.welcome-message}")
-    val myAppWelcomeMessage: String = ""
+	val myAppWelcomeMessage: String = ""
 
 	@PostConstruct
 	fun printMyAppWelcomeMessage() {
@@ -17,5 +17,5 @@ class KotlinApiApplication {
 }
 
 fun main(args: Array<String>) {
-    runApplication<KotlinApiApplication>(*args)
+	runApplication<KotlinApiApplication>(*args)
 }
