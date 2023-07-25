@@ -1,0 +1,7 @@
+spring:
+  config:
+    activate:
+      on-profile: run
+
+my-app:
+  welcome-message: "Hello, run!"
