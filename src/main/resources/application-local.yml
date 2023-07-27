@@ -1,7 +1,0 @@
-spring:
-  config:
-    activate:
-      on-profile: "local"
-
-my-app:
-  welcome-message: "Hello, local!"
