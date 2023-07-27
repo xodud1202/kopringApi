@@ -6,8 +6,8 @@ import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment
 import java.util.*
 
 class UpperCaseNamingStrategy : PhysicalNamingStrategy {
-    override fun toPhysicalColumnName(columnName: Identifier?, jdbcEnvironment: JdbcEnvironment?): Identifier {
-        return Identifier.toIdentifier(columnName?.text?.toUpperCase(Locale.ROOT))
+    override fun toPhysicalColumnName(columnName: Identifier?, jdbcEnvironment: JdbcEnvironment?): Identifier? {
+        return columnName
     }
 
     override fun toPhysicalTableName(tableName: Identifier?, jdbcEnvironment: JdbcEnvironment?): Identifier {
