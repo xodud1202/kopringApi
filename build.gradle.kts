@@ -6,6 +6,9 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm") version "1.6.0"
     kotlin("plugin.spring") version "1.6.0"
+    kotlin("plugin.jpa") version "1.4.21"
+    kotlin("plugin.allopen") version "1.4.21"
+    kotlin("plugin.noarg") version "1.4.21"
 }
 
 group = "com.xodud1202"
@@ -25,9 +28,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("io.github.microutils:kotlin-logging:1.12.5") // Logging
+    implementation("org.jetbrains.kotlin:kotlin-allopen")
+    implementation("org.jetbrains.kotlin:kotlin-noarg")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    runtimeOnly("mysql:mysql-connector-java") // MySQL
 
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
