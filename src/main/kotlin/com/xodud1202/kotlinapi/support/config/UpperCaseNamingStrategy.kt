@@ -1,4 +1,4 @@
-package com.xodud1202.kotlinapi.config
+package com.xodud1202.kotlinapi.support.config
 
 import org.hibernate.boot.model.naming.Identifier
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy

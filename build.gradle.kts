@@ -28,11 +28,22 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("io.github.microutils:kotlin-logging:1.12.5") // Logging
     implementation("org.jetbrains.kotlin:kotlin-allopen")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.projectlombok:lombok:1.18.28")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.security:spring-security-test")
+    implementation("org.apache.commons:commons-lang3:3.10")
 
+    implementation("commons-codec:commons-codec:1.15")
+    implementation("javax.servlet:javax.servlet-api:4.0.1")
+    implementation("io.github.microutils:kotlin-logging:1.12.5") // Logging
+    implementation("io.jsonwebtoken:jjwt:0.9.1")
+    implementation("io.jsonwebtoken:jjwt-api:0.11.2")
+
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.2")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.2")
     runtimeOnly("mysql:mysql-connector-java") // MySQL
 
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
