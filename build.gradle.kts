@@ -34,6 +34,7 @@ dependencies {
     implementation("org.projectlombok:lombok:1.18.28")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.security:spring-security-test")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.apache.commons:commons-lang3:3.10")
 
     implementation("commons-codec:commons-codec:1.15")
@@ -48,6 +49,7 @@ dependencies {
 
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 tasks.withType<KotlinCompile> {
