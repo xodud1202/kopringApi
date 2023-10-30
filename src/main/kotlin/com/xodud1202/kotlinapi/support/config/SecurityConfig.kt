@@ -18,6 +18,9 @@ import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.web.cors.CorsConfiguration
+import org.springframework.web.cors.CorsConfigurationSource
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 
 @Configuration
 @EnableWebSecurity
@@ -66,5 +69,21 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 			.and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
 			.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter::class.java)
+	}
+
+	@Bean
+	fun corsConfigurationSource(): CorsConfigurationSource {
+		val configuration = CorsConfiguration()
+		configuration.addAllowedOriginPattern("*")
+		// configuration.addAllowedOrigin("http://localhost:8080");
+		// configuration.addAllowedOrigin("http://xodud1202.ipdisk.co.kr:8014");
+		// configuration.addAllowedOrigin("https://front.xodud1202.kro.kr");
+		// configuration.addAllowedOrigin("http://front.xodud1202.kro.kr");
+		configuration.addAllowedHeader("*")
+		configuration.addAllowedMethod("*")
+		configuration.allowCredentials = true
+		val source = UrlBasedCorsConfigurationSource()
+		source.registerCorsConfiguration("/**", configuration)
+		return source
 	}
 }
