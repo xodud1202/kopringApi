@@ -2,10 +2,12 @@ package com.xodud1202.kotlinapi.controller
 
 import com.xodud1202.kotlinapi.domain.Board
 import com.xodud1202.kotlinapi.repository.BoardRepository
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
+@CrossOrigin
 @RestController
 @RequestMapping("/board")
 class TyBoardController (
